@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\Unidad;
 use App\Models\Usuario;
 use App\Models\Vehiculo;
+use App\Models\Entrada;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -29,7 +30,8 @@ class DatabaseSeeder extends Seeder
             ProductoSeeder::class,
             UnidadSeeder::class,
             UsuarioSeeder::class,
-            VehiculoSeeder::class
+            VehiculoSeeder::class,
+            EntradaSeeder::class
         ]);
     }
 }

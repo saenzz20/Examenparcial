@@ -8,10 +8,16 @@
 </head>
 <body>
     <form action="{{route('usuario.store')}}" method="post">
-        @csrf
-        <label for="Nombre"></label>
-        <label for="Apellidos"></label>
-        <input type="text" name="nombre">
+        @csrf       
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos">
+        <label for="imagen">Imagen</label>
+        <input type="text" name="imagen" id="imagen">
+        <label for="activo">Activo</label>
+        <input type="text" name="activo" id="activo">
+                                      
         <input type="submit" value="Guardar">
     </form>
 </body>

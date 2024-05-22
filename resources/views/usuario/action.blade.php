@@ -1,5 +1,5 @@
 <div class="modal-content">
-    <form id="formUpdate" action="{{$usuario->id ? route('usuario.update',$categoria) : route('usuario.store')}}"
+    <form id="formUpdate" action="{{$usuario->id ? route('usuario.update',$usuario) : route('usuario.store')}}"
      method="post">
     <div class="modal-header">
         <h4 class="modal-title" id="modal-title">Usuario</h4>
@@ -22,6 +22,16 @@
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos" class="form-control" id="apellidos" placeholder="Ingrese Apellidos" value="{{$usuario->apellidos}}">
             <div id="msg_apellidos"></div>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input type="text" name="imagen" class="form-control" id="imagen" placeholder="Ingrese imagen" value="{{$usuario->imagen}}">
+            <div id="msg_imagen"></div>
+        </div>
+        <div class="form-group">
+            <label for="activo">Activo</label>
+            <input type="text" name="activo" class="form-control" id="activo" placeholder="Ingrese activo" value="{{$usuario->activo}}">
+            <div id="msg_activo"></div>
         </div>
             <div class="form-group">
             <button type="submit" class="btn btn-primary" id="guardar"><span id="textoBoton">Guardar</span></button>

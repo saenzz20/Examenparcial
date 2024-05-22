@@ -9,12 +9,12 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="m-0">Usuarios <button class="btn btn-primary" onclick="nuevo()"><i class="fas fa-file"></i> Nuevo</button> <a href=""
+                  <h5 class="m-0">Entradas <button class="btn btn-primary" onclick="nuevo()"><i class="fas fa-file"></i> Nuevo</button> <a href=""
                       class="btn btn-success"><i class="fas fa-file-csv"></i> CSV</a></h5>
                 </div>
                 <div class="card-body">
                   <div>
-                    <form action="{{route('usuario.index')}}" method="get">
+                    <form action="{{route('entrada.index')}}" method="get">
                       <div class="input-group">
                           <input name="texto" type="text" class="form-control" value="{{$texto}}">
                           <div class="input-group-append">
@@ -30,11 +30,8 @@
                         <thead>
                           <tr>
                             <th width="8%">Opciones</th>
-                            <th width="5%">ID</th>
-                            <th width="15%">Nombre</th>
-                            <th width="15%">Apellidos</th>
-                            <th width="10%">Imagen</th>
-                            <th width="5%">Activo</th>                                                        
+                            <th width="10%">ID</th>
+                            <th width="10%">Placa</th>                                 
                           </tr>
                         </thead>
                         <tbody>
@@ -49,10 +46,7 @@
                               </button>
                             </td>
                             <td>{{$reg->id}}</td>
-                            <td>{{$reg->nombre}}</td>
-                            <td>{{$reg->apellidos}}</td>
-                            <td>{{$reg->imagen}}</td>
-                            <td>{{$reg->activo}}</td>
+                            <td>{{$reg->placa}}</td>                            
                           </tr>
                           @endforeach
                         </tbody>
@@ -84,7 +78,7 @@
     function nuevo(){
       $.ajax({
             method: 'get',
-            url: `{{url('usuario/create')}}`,
+            url: `{{url('entrada/create')}}`,
             success: function(res){
               $('#modal-update').find('.modal-dialog').html(res);
               $("#textoBoton").text("Guardar");
@@ -96,7 +90,7 @@
     function editar(id){
       $.ajax({
             method: 'get',
-            url: `{{url('usuario')}}/${id}/edit`,
+            url: `{{url('entrada')}}/${id}/edit`,
             success: function(res){
               $('#modal-update').find('.modal-dialog').html(res);
               $("#textoBoton").text("Actualizar");
@@ -158,7 +152,7 @@
               if (result.isConfirmed) {
                 $.ajax({
                     method: 'DELETE',
-                    url: `{{url('usuario')}}/${id}`,
+                    url: `{{url('entrada')}}/${id}`,
                     headers:{
                       'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
                     },

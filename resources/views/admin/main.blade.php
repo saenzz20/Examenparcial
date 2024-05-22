@@ -151,6 +151,18 @@
                     <p>Unidades</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a id="liVehiculo" href="/vehiculo" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Vehiculos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a id="liEntrada" href="/entrada" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Entradas</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li id="liSeguridad" class="nav-item">

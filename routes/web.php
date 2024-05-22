@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UnidadController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\EntradaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,6 +36,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('vehiculo', VehiculoController::class);
+});
+
+Route::middleware('auth')->group(function () {
+    Route::resource('entrada', EntradaController::class);
 });
 
 Route::get('/dashboard', function () {
